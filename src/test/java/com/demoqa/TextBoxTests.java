@@ -2,6 +2,7 @@ package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.selector.ByAttribute;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -23,9 +24,10 @@ public class TextBoxTests {
         String lastName = "Random";
         String email = "random@dude.ai";
         String phone = "88005553535";
+        String subject = "english";
 
         open("/automation-practice-form");
-        Selenide.zoom(0.75);
+        zoom(0.75);
             //Насколько хорошая идея использовать масштаб?
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
@@ -37,6 +39,10 @@ public class TextBoxTests {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue(String.valueOf(5));
         $(".react-datepicker__year-select").selectOption("1991");
+        $(".react-datepicker__day--017").click();
+        $("subjectsContainer").setValue(subject).pressEnter();
+
+
 
 
     }
