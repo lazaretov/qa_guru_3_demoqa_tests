@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class TextBoxTests {
@@ -20,7 +20,16 @@ public class TextBoxTests {
     @Test
     void fillFormTest () {
         open("/automation-practice-form");
-        Selenide.zoom(0.75); //Насколько хорошая идея использовать масштаб?
+        Selenide.zoom(0.75);
+            //Насколько хорошая идея использовать масштаб?
+        $("#firstName").setValue("Dude");
+        $("#lastName").setValue("Random");
+        $("#userEmail").setValue("random@dude.ai");
+        $(".custom-control-label").click();
+            /*Не смог найти способ выбрать не первый радио-баттон при таком запросе, как сослаться к
+            <label title for="gender-radio-2" class="custom-control-label">Female</label>*/
+        $("#userNumber").setValue("88005553535");
+
 
     }
 }
