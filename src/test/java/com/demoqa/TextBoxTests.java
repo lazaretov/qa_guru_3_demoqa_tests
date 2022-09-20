@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -32,16 +33,16 @@ public class TextBoxTests {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
-        $(".custom-control-label").click();
-            /*Не смог найти способ выбрать не первый радио-баттон при таком запросе, как сослаться к
-            <label title for="gender-radio-2" class="custom-control-label">Female</label> ? */
+        $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue(phone);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue(String.valueOf(5));
         $(".react-datepicker__year-select").selectOption("1991");
         $(".react-datepicker__day--017").click();
         $("#subjectsInput").setValue(subject).pressEnter();
-        $("#uploadPicture").uploadFile(new File("/pic.jpg"));
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#uploadPicture").uploadFile(new File("src/test/resources/pic.JPG"));
+
 
 
 
