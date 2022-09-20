@@ -1,8 +1,6 @@
 package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.selector.ByAttribute;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
