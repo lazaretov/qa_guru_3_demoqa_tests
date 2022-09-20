@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -38,8 +40,8 @@ public class TextBoxTests {
         $(".react-datepicker__month-select").selectOptionByValue(String.valueOf(5));
         $(".react-datepicker__year-select").selectOption("1991");
         $(".react-datepicker__day--017").click();
-        $("subjectsContainer").setValue(subject).pressEnter();
-
+        $("#subjectsInput").setValue(subject).pressEnter();
+        $("#uploadPicture").uploadFile(new File("/pic.jpg"));
 
 
 
