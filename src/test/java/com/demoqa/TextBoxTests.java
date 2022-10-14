@@ -34,8 +34,9 @@ public class TextBoxTests {
         String gender = "Female";
 
         open("/automation-practice-form");
-        zoom(0.75);
-            //Насколько хорошая идея использовать масштаб?
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
